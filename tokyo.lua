@@ -580,6 +580,11 @@ end
 library.utility = utility
 
 function library:Unload()
+        if RadarModule then
+        pcall(function()
+            RadarModule:Disable()
+        end)
+    end
     library.unloaded:Fire();
     for _,c in next, self.connections do
         c:Disconnect()
