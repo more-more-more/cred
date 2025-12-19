@@ -4784,7 +4784,40 @@ function library:CreateSettingsTab(menu)
        end})
 
     mainSection:AddSeparator({text = 'Indicators'});
+mainSection:AddToggle({text = 'Show Keybinds Display', flag = 'status_keybinds_enabled', state = false});
 
+mainSection:AddToggle({text = 'Show Enabled Features', flag = 'status_features_enabled', state = false});
+
+mainSection:AddList({
+    text = 'Display Position',
+    flag = 'status_position',
+    values = {"Top Left", "Top Right", "Bottom Left", "Bottom Right"},
+    callback = function(v) end
+}):Select("Top Left");
+
+mainSection:AddSlider({
+    text = 'Display X Offset',
+    flag = 'status_position_x',
+    min = -500,
+    max = 500,
+    increment = 1,
+    value = 10,
+    callback = function(v) end
+});
+
+mainSection:AddSlider({
+    text = 'Display Y Offset',
+    flag = 'status_position_y',
+    min = -500,
+    max = 500,
+    increment = 1,
+    value = 30,
+    callback = function(v) end
+});
+
+mainSection:AddSeparator({text = ''});
+
+mainSection:AddToggle({text = 'Watermark', flag = 'watermark_enabled', state = true,});
     mainSection:AddToggle({text = 'Watermark', flag = 'watermark_enabled', state = true,});
 
     mainSection:AddSlider({text = 'Custom X', flag = 'watermark_x', suffix = '%', min = 0, max = 100, increment = .1, value = 6});
