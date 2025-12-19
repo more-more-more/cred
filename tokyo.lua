@@ -4785,6 +4785,8 @@ function library:CreateSettingsTab(menu)
 
     mainSection:AddSeparator({text = 'Indicators'});
 
+
+mainSection:AddToggle({text = 'Watermark', flag = 'watermark_enabled', state = true,});
     mainSection:AddToggle({text = 'Watermark', flag = 'watermark_enabled', state = true,});
 
     mainSection:AddSlider({text = 'Custom X', flag = 'watermark_x', suffix = '%', min = 0, max = 100, increment = .1, value = 6});
