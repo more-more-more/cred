@@ -4785,8 +4785,6 @@ function library:CreateSettingsTab(menu)
 
     mainSection:AddSeparator({text = 'Indicators'});
 
-
-mainSection:AddToggle({text = 'Watermark', flag = 'watermark_enabled', state = true,});
     mainSection:AddToggle({text = 'Watermark', flag = 'watermark_enabled', state = true,});
 
     mainSection:AddSlider({text = 'Custom X', flag = 'watermark_x', suffix = '%', min = 0, max = 100, increment = .1, value = 6});
@@ -4801,15 +4799,7 @@ mainSection:AddToggle({text = 'Watermark', flag = 'watermark_enabled', state = t
     mainSection:AddSlider({text = 'Position Y', flag = 'keybind_indicator_y', min = 0, max = 100, increment = .1, value = 30, callback = function()
         library.keyIndicator:SetPosition(newUDim2(library.flags.keybind_indicator_x / 100, 0, library.flags.keybind_indicator_y / 100, 0));    
     end});
-    mainSection:AddToggle({text = 'Enabled', flag = 'enabled_indicator', state = true,});
-     library.enabledIndicator:SetEnabled(bool);
-    end})
-    mainSection:AddSlider({'Position X', flag = 'enabled_indictator_x', min = 0, max = 100, increment = .1, value = 30, callback = function()
-     library.enabledIndicator:SetPosition(newUDim2(library.flags.enabled_indicator_x / 100, 0, library.flags.enabled_indicator_y / 100, 0));
-    end});
-    mainSection:AddSlider({'Position Y', flag = 'enabled_indictator_y', min = 0, max = 100, increment = .1, value = .5, callback = function()
-     library.enabledIndicator:SetPosition(newUDim2(library.flags.enabled_indicator_x / 100, 0, library.flags.enabled_indicator_y / 100, 0));
-    end});
+
 
 
     local themeStrings = {"Custom"};
